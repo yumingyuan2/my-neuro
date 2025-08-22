@@ -19,6 +19,35 @@ My-Neuro 是一个专为个人打造的 AI 角色定制平台，旨在通过您�
 
 ⚠️ **当前项目仅支持 NVIDIA 显卡**。AMD 显卡虽然也能使用，但 TTS 功能会报错（即没有 AI 声音）。如果不介意可以尝试。
 
+## 🔐 安全配置
+
+### API密钥配置
+
+**重要**: 请确保正确配置您的API密钥，不要将密钥提交到版本控制系统。
+
+1. **方法一：环境变量（推荐）**
+   ```bash
+   # Windows
+   set API_KEY=your_api_key_here
+   set JIETU_API_KEY=your_jietu_api_key_here
+   
+   # Linux/Mac
+   export API_KEY=your_api_key_here
+   export JIETU_API_KEY=your_jietu_api_key_here
+   ```
+
+2. **方法二：配置文件**
+   - 编辑 `py-my-neuro/config_mod/config.json`
+   - 将 `YOUR_API_KEY_HERE` 替换为您的实际API密钥
+   - 将 `YOUR_JIETU_API_KEY_HERE` 替换为您的截图API密钥
+
+### 安全检查
+
+运行安全检查工具以确保项目安全：
+```bash
+python security_check.py
+```
+
 ## 快速开始
 
 ### 方法一：一键部署（推荐新手）
@@ -27,15 +56,18 @@ My-Neuro 是一个专为个人打造的 AI 角色定制平台，旨在通过您�
    - 下载地址：https://www.anaconda.com/download/success
    - 安装教程：https://www.bilibili.com/video/BV1ns4y1T7AP
 
-2. **运行一键部署**
+2. **配置API密钥**
+   - 按照上述安全配置说明设置API密钥
+
+3. **运行一键部署**
    - 双击 `一键部署.bat` 文件
    - 等待自动下载和配置完成
 
-3. **启动服务**
+4. **启动服务**
    - 双击 `Game-starts.bat` 文件
    - 等待所有服务启动完成
 
-4. **启动前端**
+5. **启动前端**
    - 进入 `live-2d` 文件夹
    - 双击 `肥牛.exe` 文件
    - 配置 API 信息并启动
@@ -173,6 +205,20 @@ RAG.bat
 - 检查模型文件是否完整
 - 重新安装依赖
 
+#### 4. API配置问题
+
+**问题**: API密钥无效
+**解决**:
+- 检查API密钥是否正确
+- 确认API服务是否可用
+- 检查网络连接
+
+**问题**: API配额不足
+**解决**:
+- 检查API使用量
+- 考虑升级API套餐
+- 使用本地模型替代
+
 ### 诊断工具
 
 如果遇到问题，可以运行诊断工具：
@@ -189,6 +235,20 @@ python diagnostic_tool.py
 - 模型文件
 - GPU 状态
 - 系统配置
+
+### 安全检查
+
+定期运行安全检查：
+
+```bash
+python security_check.py
+```
+
+安全检查会检测：
+- 硬编码的敏感信息
+- 危险函数使用
+- 文件权限问题
+- 依赖包安全漏洞
 
 ## 定制功能
 
@@ -236,6 +296,7 @@ python diagnostic_tool.py
 - 优化了代码结构和错误处理
 - 改进了文档和安装指南
 - 增强了诊断和故障排除功能
+- **安全改进**: 移除了硬编码的API密钥，添加了安全检查工具
 
 ## 致谢
 
