@@ -1,0 +1,15 @@
+{
+  "personality_traits": {
+    "extraversion": 0.7,
+    "agreeableness": 0.6,
+    "conscientiousness": 0.5,
+    "neuroticism": 0.4,
+    "openness": 0.8
+  },
+  "emotion_influences": {
+    "time_of_day": 0.1,
+    "interaction_count": 0.2,
+    "recent_events": 0.3,
+    "personality": 0.4
+  }
+}
