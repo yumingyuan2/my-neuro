@@ -50,7 +50,12 @@
         "cut_text_tts": true,
         "mood_color": true,
         "free_movement": false,
-        "text_filter": true
+        "text_filter": true,
+        "long_term_memory": true,
+        "real_emotion": true,
+        "ai_teaching": true,
+        "game_companion": true,
+        "web_interface": true
     },
     "mood_color": {
         "enabled": true,
