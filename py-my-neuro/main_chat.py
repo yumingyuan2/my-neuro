@@ -76,6 +76,9 @@ class MyNeuro:
         live_model = Live2DModel()
         live_model.show()
 
+        # 🆕 初始化新功能组件
+        self._setup_enhanced_features(live_model)
+
         # 初始化各个组件
         self.vad_input = AudioSystem(parent_neuro=self)
         self.asr_vad = self.config['inputs']['asr']['enabled']
@@ -106,10 +109,32 @@ class MyNeuro:
 
         # 快捷键
         keyboard.add_hotkey('ctrl+i', self.stop_key)
+        
+        # 🆕 新功能快捷键
+        keyboard.add_hotkey('ctrl+shift+c', self.toggle_mood_color)  # 切换心情颜色
+        keyboard.add_hotkey('ctrl+shift+m', self.toggle_free_movement)  # 切换自由移动
+        keyboard.add_hotkey('ctrl+shift+r', self.trigger_random_mood)  # 随机心情
 
         # 🔥 新增：事件驱动集成
         if HAS_EVENT_BUS:
             self._setup_event_handlers()
+
+    def _setup_enhanced_features(self, live_model):
+        """设置增强功能组件"""
+        try:
+            # 🆕 心情颜色叠加系统
+            from UI.mood_overlay import MoodColorOverlay
+            self.mood_overlay = MoodColorOverlay(config=self.config)
+            
+            # 🆕 自由移动控制器
+            from UI.free_movement import FreeMovementController
+            self.movement_controller = FreeMovementController(live_model, config=self.config.get("movement", {}))
+            
+            print("✨ 增强功能组件初始化完成")
+        except ImportError as e:
+            print(f"⚠️ 增强功能组件导入失败: {e}")
+            self.mood_overlay = None
+            self.movement_controller = None
 
     def _setup_event_handlers(self):
         """设置事件处理器"""
@@ -383,6 +408,32 @@ class MyNeuro:
                     "text": user,
                     "source": "auto_chat"
                 })
+
+    def toggle_mood_color(self):
+        """切换心情颜色功能"""
+        if hasattr(self, 'mood_overlay') and self.mood_overlay:
+            self.mood_overlay.toggle_overlay()
+            print("🎨 切换心情颜色叠加")
+        else:
+            print("⚠️ 心情颜色功能不可用")
+
+    def toggle_free_movement(self):
+        """切换自由移动功能"""
+        if hasattr(self, 'movement_controller') and self.movement_controller:
+            self.movement_controller.toggle_movement()
+            status = self.movement_controller.get_status()
+            state = "开启" if status["enabled"] else "关闭"
+            print(f"🚶 {state}自由移动功能")
+        else:
+            print("⚠️ 自由移动功能不可用")
+
+    def trigger_random_mood(self):
+        """触发随机心情"""
+        if hasattr(self, 'mood_overlay') and self.mood_overlay:
+            self.mood_overlay.random_mood_change()
+            print("🎲 触发随机心情变化")
+        else:
+            print("⚠️ 心情颜色功能不可用")
 
     def main_chat(self):
         """主聊天循环"""
