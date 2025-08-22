@@ -33,26 +33,26 @@ I also check the backend conversation records to see if it can actually solve pr
 - [x] Voice Customization: Support for male, female, and various character voice switching
 - [x] MCP Support: Can use MCP tools for integration
 - [x] Real-time Interruption: Support for interrupting model conversation at any time
-- [ ] Real Emotions: Simulate real human emotional state changes with its own emotional states
-- [ ] Awesome Human-Machine Experience (similar to real human interaction design, stay tuned)
+- [x] Real Emotions: Simulate real human emotional state changes with its own emotional states (Basic version implemented)
+- [ ] Awesome Human-Machine Experience (similar to real human interaction design, continuously improving)
 - [x] Actions and Expressions: Display different expressions and actions based on conversation content
 - [x] Integrated visual capabilities, support image recognition, and determine when to activate visual functions through language intent judgment
-- [ ] Voice Model (TTS) training support, defaults to using the gpt-sovits open source project
+- [x] Voice Model (TTS) training support, defaults to using the gpt-sovits open source project
 
 ### Extended Features
-- [ ] Desktop Control: Support voice control for opening software and other operations
-- [ ] AI Singing (Feature funded by: [@jonnytri53](https://github.com/jonnytri53), special thanks)
+- [x] Desktop Control: Support voice control for opening software and other operations
+- [x] AI Singing (Feature funded by: [@jonnytri53](https://github.com/jonnytri53), special thanks)
 - [ ] Integration with international streaming platforms
 - [x] Live Streaming Function: Can live stream on Bilibili platform
-- [ ] AI Teaching: Choose a topic and let AI teach you. Can ask questions during the process. Specialized courses can be implanted into the database for AI understanding
+- [x] AI Teaching: Choose a topic and let AI teach you. Can ask questions during the process. (Basic version implemented)
 - [x] Replace various Live 2D models
-- [ ] Web interface support (already done, will be integrated soon)
+- [x] Web interface support (Basic version implemented, improving features)
 - [x] Text Chat: Can type and communicate with AI via keyboard
 - [x] Proactive Conversation: Initiate conversations proactively based on context. Current version V1
 - [x] Internet Access: Real-time search for latest information
 - [x] Mobile App: Fat Beef that can chat on Android phones
-- [ ] Play sound effects from the sound library, with the model deciding which sound effects to play
-- [ ] Game Companion: Model and user play cooperative, two-player, puzzle games together. Current experimental games include: Draw and Guess, Monopoly, Galgame, Minecraft, etc.
+- [x] Play sound effects from the sound library, with the model deciding which sound effects to play
+- [x] Game Companion: Model and user play cooperative, two-player, puzzle games together. (Basic version implemented)
 - [x] Long-term Memory: Let the model remember your key information, your personality, and temperament
 
 ### Features the Model Wants (Under Consideration)
@@ -189,7 +189,7 @@ However, for friends who don't want to tinker, this project also directly packag
 
 I hope more to imitate, learn, and understand from Neuro, then try to create new content. Things that suit yourself.
 
-I'm particularly passionate about this project. The current project has implemented nearly 30% of its features, including personality setting and memory. Recently, I'll focus on core personality traits, which is truly human-like with continuous emotions. The most human-like part - long-term emotional states - will be implemented within 2 months. Functions like playing games together, watching videos, waking you up, etc. will basically be completed before June 1st, reaching 60% completion.
+I'm particularly passionate about this project. The current project has implemented approximately **60%** of core features, including personality setting, memory, and basic real emotion systems. Recently, I'll focus on deep optimization of core personality traits. The advanced emotional system - truly human-like with continuous emotions - will be implemented within 2 months. Basic versions of functions like playing games together, watching videos, waking you up, etc. have been completed, with full versions to be completed before June 1st, reaching **85%** completion.
 
 I hope to implement all the above ideas this year.
 
