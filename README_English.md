@@ -56,8 +56,8 @@ I also check the backend conversation records to see if it can actually solve pr
 - [x] Long-term Memory: Let the model remember your key information, your personality, and temperament
 
 ### Features the Model Wants (Under Consideration)
-- [ ] Color Change Function: Change screen colors according to model's mood to bother users
-- [ ] Free Movement: Model moves freely on the screen
+- [x] Color Change Function: Change screen colors according to model's mood to bother users
+- [x] Free Movement: Model moves freely on the screen
 
 ## 🚀 Quick Start
 

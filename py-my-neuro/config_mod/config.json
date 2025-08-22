@@ -47,6 +47,20 @@
         "function_calling": true,
         "audio_output": true,
         "screenshot": false,
-        "cut_text_tts": true
+        "cut_text_tts": true,
+        "mood_color": true,
+        "free_movement": false,
+        "text_filter": true
+    },
+    "mood_color": {
+        "enabled": true,
+        "auto_change": false,
+        "auto_interval": 30
+    },
+    "movement": {
+        "enabled": false,
+        "speed": 1.0,
+        "interval": 5000,
+        "pattern": "random_walk"
     }
 }
